@@ -1,0 +1,2 @@
+# BeavAI
+AI Research Copilot
