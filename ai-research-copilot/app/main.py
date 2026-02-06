@@ -1,6 +1,11 @@
-from dotenv import load_dotenv
-import os
+# app/main.py
 
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-print(api_key)  # Should print your key
+from fastapi import FastAPI
+
+# THIS IS THE FASTAPI INSTANCE
+app = FastAPI()
+
+# Simple test route
+@app.get("/ping")
+def ping():
+    return {"message": "pong"}
