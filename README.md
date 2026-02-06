@@ -66,9 +66,3 @@ BeavAI/
 	 requirements.txt
 	 Dockerfile
 ```
-
-## License
-MIT License
-
----
-
