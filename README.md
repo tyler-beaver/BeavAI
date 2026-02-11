@@ -1,6 +1,6 @@
 <div align="center">
   <h1>BeavAI: AI Research Copilot</h1>
-  <img src="https://img.shields.io/badge/Python-3.11+-blue" />
+	<img src="https://img.shields.io/badge/Python-3.14+-blue" />
   <img src="https://img.shields.io/badge/FastAPI-async-green" />
   <img src="https://img.shields.io/badge/Docker-ready-lightgrey" />
 </div>
@@ -21,7 +21,7 @@ BeavAI is a production-ready agentic RAG (Retrieval-Augmented Generation) system
 | Component         | Technology           | Purpose                                      |
 |-------------------|---------------------|-----------------------------------------------|
 | Language          | Python 3.11+        | Standard for AI/ML, async support             |
-| LLM API           | OpenAI GPT-5        | Reasoning, summarization, QA                  |
+| LLM API           | OpenAI GPT-3.5/4    | Reasoning, summarization, QA                  |
 | Agent Framework   | LangGraph           | Multi-step reasoning, tool orchestration      |
 | Vector DB         | FAISS (local)       | Fast vector search for RAG                    |
 | Backend/API       | FastAPI             | Async REST API                                |
@@ -42,8 +42,22 @@ BeavAI is a production-ready agentic RAG (Retrieval-Augmented Generation) system
 	pip install -r requirements.txt
 	```
 3. **Run the API server:**
+   
+	From the `ai-research-copilot` directory:
 	```bash
-	uvicorn app.main:app --reload
+	cd ai-research-copilot/app
+	fastapi dev main.py
+	```
+	Or, using uvicorn (from the same directory):
+	```bash
+	uvicorn main:app --reload
+	```
+   
+	If running from the project root, use:
+	```bash
+	fastapi dev ai-research-copilot/app/main.py
+	# or
+	uvicorn ai-research-copilot.app.main:app --reload
 	```
 4. **Test the API:**
 	Visit [http://127.0.0.1:8000/ping](http://127.0.0.1:8000/ping) or use:
