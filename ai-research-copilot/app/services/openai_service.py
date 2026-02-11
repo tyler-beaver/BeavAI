@@ -1,11 +1,11 @@
-import os  
+import os
 from openai import OpenAI
 
-client = OpenAI(api_keys=os.getnenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def ask_gpt(prompt: str): 
-    response.client.chat.completions.create(
-        model="gpt-r",
+def ask_gpt(prompt: str):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
     )
-    return response.choice[0].message.content
+    return response.choices[0].message.content
