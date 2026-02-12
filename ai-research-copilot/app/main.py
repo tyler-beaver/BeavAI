@@ -1,8 +1,8 @@
-# app/main.py
-
 from fastapi import FastAPI
+from dotenv import load_dotenv
 
-# THIS IS THE FASTAPI INSTANCE
+load_dotenv(); 
+
 app = FastAPI()
 
 # Simple test route
