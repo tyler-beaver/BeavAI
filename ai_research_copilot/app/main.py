@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from services.openai_service import ask_gpt
+from .services.openai_service import ask_gpt
 from dotenv import load_dotenv
 
 load_dotenv(); 
