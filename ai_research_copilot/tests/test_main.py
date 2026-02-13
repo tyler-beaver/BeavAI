@@ -6,6 +6,7 @@ client = TestClient(app)
 
 def test_ping_endpoint():
     response = client.get("/ping")
+    print(response.json())
     assert response.status_code == 200
     assert response.json() == {"status" : "ok"}
 
