@@ -1,5 +1,3 @@
-from fastapi import FastAPI
-from .services.openai_service import ask_gpt
 from dotenv import load_dotenv
 import os
 
@@ -7,9 +5,11 @@ import os
 dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.env'))
 load_dotenv(dotenv_path)
 
+from fastapi import FastAPI
+from .services.openai_service import ask_gpt
+
 app = FastAPI()
 
-# Simple test route
 @app.get("/ping")
 def ping():
     return {"status": "ok"}
