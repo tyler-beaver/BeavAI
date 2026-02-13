@@ -7,6 +7,10 @@ load_dotenv();
 app = FastAPI()
 
 # Simple test route
+@app.get("/ping")
+def ping():
+    return {"status": "ok"}
+
 @app.get("/ask")
 def ask(prompt: str):
     answer = ask_gpt(prompt)

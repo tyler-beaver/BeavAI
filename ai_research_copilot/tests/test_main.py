@@ -4,6 +4,11 @@ from unittest.mock import patch
 
 client = TestClient(app)
 
+def test_ping_endpoint():
+    response = client.get("/ping")
+    assert response.status_code == 200
+    assert response.json() == {"status" : "ok"}
+
 def test_ask_endpoint():
     with patch("ai_research_copilot.app.main.ask_gpt", return_value="mocked answer"):
         response = client.get("/ask", params={"prompt":"hello"})
