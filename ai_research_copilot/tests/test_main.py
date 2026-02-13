@@ -7,6 +7,7 @@ client = TestClient(app)
 def test_ask_endpoint():
     with patch("ai_research_copilot.app.main.ask_gpt", return_value="mocked answer"):
         response = client.get("/ask", params={"prompt":"hello"})
+        print(response.json())
         assert response.status_code == 200
         data = response.json()
         assert "answer" in data
