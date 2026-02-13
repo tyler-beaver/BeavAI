@@ -1,13 +1,11 @@
 from fastapi import FastAPI
 from .services.openai_service import ask_gpt
 from dotenv import load_dotenv
-from dotenv import load_dotenv
 import os
 
-dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
+# Load .env from the parent directory (ai_research_copilot)
+dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.env'))
 load_dotenv(dotenv_path)
-
-load_dotenv(); 
 
 app = FastAPI()
 
